@@ -1,0 +1,81 @@
+.chart-wrapper {
+    width: 145px;
+    max-width: 145px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    $color--white: #fff;
+    $color--yellow: #d4af37; // Set the same as in JavaScript for chart color
+    $font-weight: 900;
+    $animation-time: 1400ms; // Set the same as in JavaScript for chart animation
+    // @media (max-width: 1449.98px) {
+    //     margin: auto;
+    // }
+    // Fadin animation
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 0;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .chart {
+        position: relative;
+        margin: auto;
+        font-weight: $font-weight;
+        &__figure {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__canvas {
+            width: 145px;
+            max-width: 145px;
+            margin: auto;
+            filter: drop-shadow(0.9px 0.9px 1px #707070);
+        }
+        .chart__figure {
+            margin: auto;
+        }
+        .captions {
+            width: 90px;
+            max-width: 90px;
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            line-height: 12px;
+            transform: translate(-50%, -50%);
+            animation: fadein $animation-time;
+        }
+        p {
+            font-size: 10px;
+            color: black;
+            margin: 0;
+            font-weight: 500;
+            padding-bottom: 4.5px;
+            padding-top: 20px;
+            font-family: 'Bai Jamjuree', sans-serif;
+            .gold-letter {
+                color: $color--yellow;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            +p {
+                padding-top: 2.5px;
+                border-top: 1px solid #E6E6E6;
+                .total-count {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
